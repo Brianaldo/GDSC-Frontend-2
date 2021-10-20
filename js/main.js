@@ -22,9 +22,9 @@ const buildMovieList = (movieList) => {
   movieListHTML.innerHTML = "";
   for (i = 0; i < movieList.length; i++) {
     newMovie = `<div class="content-movieList-grid-item">
-                        <img src="${movieList[i].img}" />
-                        <label>${movieList[i].title}</label>
-                    </div>`;
+                    <img src="${movieList[i].img}" />
+                    <label>${movieList[i].title}</label>
+                </div>`;
     movieListHTML.innerHTML += newMovie;
   }
 };
@@ -32,20 +32,40 @@ const buildMovieList = (movieList) => {
 /* *** ALGORITMA *** */
 buildMovieList(movieList);
 
-document.getElementById("inputSearch").addEventListener("keyup", (event) => {
-  // console.log(event.target.value);
-  /* KAMUS LOKAL */
-  let i;
-  let newMovieList;
-  let currMovie;
-  /* ALGORITMA */
-  newMovieList = [];
-  for (i = 0; i < movieList.length; i++) {
-    currMovie = movieList[i].title.toLowerCase();
-    if (currMovie.includes(event.target.value.toLowerCase())) {
-      newMovieList.push(movieList[i]);
+document
+  .getElementById("inputSearch")
+  .addEventListener("keyup", (eventInput) => {
+    /* KAMUS LOKAL */
+    let i;
+    let newMovieList;
+    let currMovie;
+    /* ALGORITMA */
+    newMovieList = [];
+    for (i = 0; i < movieList.length; i++) {
+      currMovie = movieList[i].title.toLowerCase();
+      if (currMovie.includes(eventInput.target.value.toLowerCase())) {
+        newMovieList.push(movieList[i]);
+      }
+    }
+    console.log(newMovieList);
+    buildMovieList(newMovieList);
+  });
+
+window.onscroll = () => {
+  if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+    document.getElementById("title").style.fontSize = "30px";
+    document.getElementById("subtitle").style.fontSize = "0px";
+    document.getElementById("header").style.backgroundColor = "black";
+    document.getElementById("headerLink").style.display = "none";
+} else {
+    document.getElementById("subtitle").style.fontSize = "15px";
+    document.getElementById("header").style.backgroundColor = "rgba(255, 0, 0, 0)";
+    document.getElementById("header").style.boxShadow = "none";
+    document.getElementById("headerLink").style.display = "flex";
+    if (window.matchMedia("screen and (max-width: 600px)").matches) {
+        document.getElementById("title").style.fontSize = "35px";
+    } else {
+      document.getElementById("title").style.fontSize = "45px";
     }
   }
-  console.log(newMovieList);
-  buildMovieList(newMovieList);
-});
+};
