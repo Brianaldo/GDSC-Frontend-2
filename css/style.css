@@ -66,6 +66,8 @@ header > .header-link {
   font-size: 15px;
   border-radius: 30px;
   padding: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
   display: block;
   margin-right: auto;
   margin-left: auto;
