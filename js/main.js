@@ -57,13 +57,14 @@ window.onscroll = () => {
     document.getElementById("subtitle").style.fontSize = "0px";
     document.getElementById("header").style.backgroundColor = "black";
     document.getElementById("headerLink").style.display = "none";
-} else {
+  } else {
     document.getElementById("subtitle").style.fontSize = "15px";
-    document.getElementById("header").style.backgroundColor = "rgba(255, 0, 0, 0)";
+    document.getElementById("header").style.backgroundColor =
+      "rgba(255, 0, 0, 0)";
     document.getElementById("header").style.boxShadow = "none";
     document.getElementById("headerLink").style.display = "flex";
     if (window.matchMedia("screen and (max-width: 600px)").matches) {
-        document.getElementById("title").style.fontSize = "35px";
+      document.getElementById("title").style.fontSize = "35px";
     } else {
       document.getElementById("title").style.fontSize = "45px";
     }
