@@ -6,6 +6,7 @@ body {
   padding: 0;
   margin: 0;
   padding-bottom: 20px;
+  /* overflow: hidden; */
 }
 
 header {
@@ -18,7 +19,7 @@ header {
   padding-bottom: 10px;
   padding-left: 3%;
   transition: 0.4s;
-  z-index: 99;
+  z-index: 98;
 }
 
 header > .header-title {
@@ -129,15 +130,84 @@ header > .header-link > a > svg:hover {
   opacity: 1;
 }
 
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  overflow: auto;
+  transition: 0.4s;
+}
+
+.modal > .modal-content {
+  background-color: white;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  margin: 7.5% auto;
+  padding: 2%;
+  align-items: center;
+}
+
+.modal > .modal-content > .modal-content-img {
+  width: 50%;
+}
+
+.modal > .modal-content > .modal-content-span {
+  width: 50%;
+  height: 90%;
+  color: black;
+}
+
+.modal > .modal-content > .modal-content-img > img {
+  height: 90%;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
 @media only screen and (max-width: 1100px) {
   .content > .content-movieList > .content-movieList-grid {
     grid-template-columns: 25% 25% 25% 25%;
   }
 }
 
+@media only screen and (max-width: 950px) {
+  .modal > .modal-content > .modal-content-img {
+    width: 60%;
+  }
+
+  .modal > .modal-content > .modal-content-span {
+    width: 40%;
+    height: 90%;
+    color: black;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .content > .content-movieList > .content-movieList-grid {
     grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+  .modal > .modal-content {
+    flex-wrap: wrap;
+    padding: 3%;
+    margin: 2.5% auto;
+  }
+  .modal > .modal-content > .modal-content-img {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    align-items: center;
+  }
+
+  .modal > .modal-content > .modal-content-span {
+    width: 100%;
+    height: 35%;
+    color: black;
   }
 }
 
