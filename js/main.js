@@ -135,6 +135,7 @@ const displayModal = (title, img, desc) => {
                             <p>${procDesc}</p>
                           </div>
                          </div>`;
+  /* *** TO DO: Add Animation *** */
 };
 
 /* *** ALGORITMA *** */
