@@ -70,7 +70,7 @@ header > .header-link > a > svg:hover {
   margin-bottom: 20px;
 }
 
-.content > .content-searchBar > input {
+.content > .content-searchBar > form > input {
   width: 80%;
   /* height: 30px; */
   font-size: 15px;
@@ -149,6 +149,7 @@ header > .header-link > a > svg:hover {
   margin: 7.5% auto;
   padding: 2%;
   align-items: center;
+  overflow: auto;
 }
 
 .modal > .modal-content > .modal-content-img {
