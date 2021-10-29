@@ -6,7 +6,6 @@ body {
   padding: 0;
   margin: 0;
   padding-bottom: 20px;
-  /* overflow: hidden; */
 }
 
 header {
@@ -50,7 +49,7 @@ header > .header-link {
 
 header > .header-link > a > svg {
   transition: 0.4s;
-  /* color: white; */
+  color: rgb(231, 255, 227);
 }
 
 header > .header-link > a > svg:hover {
@@ -135,14 +134,14 @@ header > .header-link > a > svg:hover {
   height: 100%;
   position: fixed;
   display: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 99;
   overflow: auto;
   transition: 0.4s;
 }
 
 .modal > .modal-content {
-  background-color: white;
+  background-color: rgb(20, 26, 43);
   width: 70%;
   height: 70%;
   display: flex;
@@ -150,6 +149,7 @@ header > .header-link > a > svg:hover {
   padding: 2%;
   align-items: center;
   overflow: auto;
+  border-radius: 12px;
 }
 
 .modal > .modal-content > .modal-content-img {
@@ -159,7 +159,7 @@ header > .header-link > a > svg:hover {
 .modal > .modal-content > .modal-content-span {
   width: 50%;
   height: 90%;
-  color: black;
+  color: aliceblue;
 }
 
 .modal > .modal-content > .modal-content-img > img {
@@ -185,7 +185,6 @@ header > .header-link > a > svg:hover {
   .modal > .modal-content > .modal-content-span {
     width: 40%;
     height: 90%;
-    color: black;
   }
 }
 
@@ -208,7 +207,6 @@ header > .header-link > a > svg:hover {
   .modal > .modal-content > .modal-content-span {
     width: 100%;
     height: auto;
-    color: black;
   }
 }
 
