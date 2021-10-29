@@ -103,9 +103,9 @@ const buildMovieList = (movieList) => {
   movieListHTML.innerHTML = "";
   movieList.forEach((movie) => {
     let desc = movie.desc.replace(/'/g, "&aposTemp");
-    console.log(desc)
+    let title = movie.title.replace(/'/g, "&aposTemp");
     newMovieHTML = `<div class="content-movieList-grid-item">
-                    <img src="${movie.img}" onClick="displayModal('${movie.title}', '${movie.img}', '${desc}')"/>
+                    <img src="${movie.img}" onClick="displayModal('${title}', '${movie.img}', '${desc}')"/>
                     <label>${movie.title}</label>
                 </div>`;
     movieListHTML.innerHTML += newMovieHTML;
@@ -118,13 +118,14 @@ const displayModal = (title, img, desc) => {
   let procDesc;
   /* ALGORITMA */
   procDesc = desc.replace(/&aposTemp/g, "'");
+  procTitle = title.replace(/&aposTemp/g, "'");
   modalHTML.style.display = "block";
   modalHTML.innerHTML = `<div class="modal-content">
                           <div class="modal-content-img">
                             <img src="${img}"/>
                           </div>
                           <div class="modal-content-span">
-                            <h1>${title}</h1>
+                            <h1>${procTitle}</h1>
                             <p>${procDesc}</p>
                           </div>
                          </div>`;
@@ -138,7 +139,6 @@ document
   .getElementById("inputSearch")
   .addEventListener("submit", (eventInput) => {
     eventInput.preventDefault();
-    // console.log(document.getElementById("inputSearch").elements[0].value);
     runSearch(document.getElementById("inputSearch").elements[0].value);
   });
 
