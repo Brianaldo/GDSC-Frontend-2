@@ -97,13 +97,16 @@ const buildMovieList = (movieList) => {
   let movieListHTML;
   let i;
   let newMovieHTML;
+  let desc, title;
   /* ALGORITMA */
   // Inisialisasi
   movieListHTML = document.getElementById("movieList-grid");
   movieListHTML.innerHTML = "";
   movieList.forEach((movie) => {
-    let desc = movie.desc.replace(/'/g, "&aposTemp");
-    let title = movie.title.replace(/'/g, "&aposTemp");
+    desc = movie.desc.replace(/'/g, "&aposTemp");
+    title = movie.title.replace(/'/g, "&aposTemp");
+    desc = desc.replace(/"/g, "&quoteTemp");
+    title = title.replace(/"/g, "&quoteTemp");
     newMovieHTML = `<div class="content-movieList-grid-item">
                     <img src="${movie.img}" onClick="displayModal('${title}', '${movie.img}', '${desc}')"/>
                     <label>${movie.title}</label>
@@ -117,8 +120,11 @@ const displayModal = (title, img, desc) => {
   let modalHTML = document.getElementById("modal");
   let procDesc;
   /* ALGORITMA */
+  document.body.style.overflow = "hidden";
   procDesc = desc.replace(/&aposTemp/g, "'");
   procTitle = title.replace(/&aposTemp/g, "'");
+  procDesc = procDesc.replace(/&quoteTemp/g, '"');
+  procTitle = procTitle.replace(/&quoteTemp/g, '"');
   modalHTML.style.display = "block";
   modalHTML.innerHTML = `<div class="modal-content">
                           <div class="modal-content-img">
@@ -165,6 +171,8 @@ window.onscroll = () => {
 
 /* MODAL */
 window.onclick = (eventModal) => {
-  if (eventModal.target === document.getElementById("modal"))
+  if (eventModal.target === document.getElementById("modal")) {
     document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
 };

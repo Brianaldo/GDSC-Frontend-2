@@ -196,7 +196,7 @@ header > .header-link > a > svg:hover {
   .modal > .modal-content {
     flex-wrap: wrap;
     padding: 3%;
-    margin: 2.5% auto;
+    margin: 12.5% auto;
   }
   .modal > .modal-content > .modal-content-img {
     width: 100%;
@@ -207,7 +207,7 @@ header > .header-link > a > svg:hover {
 
   .modal > .modal-content > .modal-content-span {
     width: 100%;
-    height: 35%;
+    height: auto;
     color: black;
   }
 }
